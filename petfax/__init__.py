@@ -20,6 +20,11 @@ def create_app():
     @app.route('/')
     def hello():
         return "hello, PetFax"
-    
+# importing and registering the pet.py/index route
+# importing the blueprint (the name is the first argument in the bp instance)
+    from . import pet 
+# registering the blueprint as part of the app instance of flask in create_app()
+    app.register_blueprint(pet.bp)
+
     return app
     
