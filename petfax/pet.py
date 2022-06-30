@@ -13,14 +13,22 @@ print(pets)
 # new instance of Blueprint
 bp = Blueprint ("pet", __name__, url_prefix="/pets" ) 
 
+
+
 # add index route
 
 @bp.route('/')
 def index():
     return render_template("index.html", pets = pets) # here I called the render_template() and passed the index.html file, so it renders what is in the index.html file. The additional variables, name and values, are passed w/o ""
 
-
-
-
 #now I need to register this route in the __init_py (factory) instance
 
+
+
+@bp.route('/<id>')
+def show(id):
+    return render_template("show.html", pets = pets, id = id )
+
+@bp.route('/facts/<new>')
+def form(new):
+    return render_template("form.html", new = new)

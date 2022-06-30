@@ -1,0 +1,19 @@
+body {background-color: coral;
+    text-align: center;
+
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+.img {
+
+    border: solid;
+    color: azure;
+    border-radius: 25px ;
+    
+}
+
